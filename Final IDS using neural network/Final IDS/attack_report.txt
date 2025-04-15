@@ -1,0 +1,21 @@
+*** Attack Report: Impact (T1499) ***
+Description: Impact techniques are designed to destroy, disrupt, or degrade the integrity or availability of data, systems, or networks.
+Domain: enterprise-attack
+Versions: Layer: 4.4, Attack: 16, Navigator: 4.8.1
+
+Techniques:
+  - Technique ID: T1499
+    Comment: Destructive techniques used to disrupt or destroy data, systems, or networks to achieve mission objectives.
+    Score: 5
+    Show Subtechniques: False
+  - Technique ID: T1499.001
+    Comment: Endpoint Denial of Service (DoS) is used to crash or degrade the performance of a system or endpoint, preventing it from functioning properly.
+    Score: 4
+    Show Subtechniques: False
+  - Technique ID: T1499.002
+    Comment: Network Denial of Service (DoS) involves overwhelming a network with traffic, preventing legitimate users from accessing network resources.
+    Score: 4
+    Show Subtechniques: False
+
+Mitigation: Impact can be mitigated by employing disaster recovery and business continuity plans, implementing robust data backups, and ensuring system hardening to prevent unauthorized access.
+--------------------------------------------------

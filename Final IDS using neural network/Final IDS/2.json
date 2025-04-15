@@ -1,0 +1,252 @@
+[
+  {
+    "name": "Filter Network Traffic (M1037)",
+    "description": "Enterprise techniques mitigated by Filter Network Traffic, ATT&CK mitigation M1037 (v1.1)",
+    "domain": "enterprise-attack",
+    "versions": {
+      "layer": "4.4",
+      "attack": "16",
+      "navigator": "4.8.1"
+    },
+    "techniques": [
+      {
+        "techniqueID": "T1557",
+        "comment": "Use network appliances and host-based security software to block network traffic that is not necessary within the environment, such as legacy protocols that may be leveraged for AiTM conditions.",
+        "score": 1,
+        "color": "#66b1ff",
+        "showSubtechniques": true
+      },
+      {
+        "techniqueID": "T1557.001",
+        "comment": "Use host-based security software to block LLMNR/NetBIOS traffic. Enabling SMB Signing can stop NTLMv2 relay attacks.",
+        "score": 1,
+        "color": "#66b1ff",
+        "showSubtechniques": true
+      }
+    ],
+    "mitigation": "Filter Network Traffic can be mitigated by using proper network traffic filtering methods to prevent unnecessary traffic."
+  },
+  {
+    "name": "Phishing (T1566)",
+    "description": "Phishing is a social engineering technique used to trick users into revealing confidential information or installing malicious software.",
+    "domain": "enterprise-attack",
+    "versions": {
+      "layer": "4.4",
+      "attack": "16",
+      "navigator": "4.8.1"
+    },
+    "techniques": [
+      {
+        "techniqueID": "T1566",
+        "comment": "Phishing attacks typically involve sending emails that appear to be from trusted sources, aiming to persuade the recipient to click a link or download an attachment.",
+        "score": 2,
+        "color": "#f2994a",
+        "showSubtechniques": true
+      },
+      {
+        "techniqueID": "T1566.001",
+        "comment": "Spear-phishing via email, targeting specific individuals or organizations with custom-tailored emails.",
+        "score": 3,
+        "color": "#f2994a",
+        "showSubtechniques": false
+      }
+    ],
+    "mitigation": "Phishing can be mitigated by implementing email filtering systems, training users to recognize phishing attempts, and employing multi-factor authentication (MFA)."
+  },
+  {
+    "name": "Privilege Escalation (T1068)",
+    "description": "Privilege escalation techniques are used to gain higher privileges within an environment, typically to gain administrative or system-level access.",
+    "domain": "enterprise-attack",
+    "versions": {
+      "layer": "4.4",
+      "attack": "16",
+      "navigator": "4.8.1"
+    },
+    "techniques": [
+      {
+        "techniqueID": "T1068",
+        "comment": "Exploitation of vulnerabilities in software to gain elevated privileges.",
+        "score": 3,
+        "color": "#f99d1c",
+        "showSubtechniques": false
+      },
+      {
+        "techniqueID": "T1068.001",
+        "comment": "Exploiting OS kernel vulnerabilities to gain root or administrative access.",
+        "score": 3,
+        "color": "#f99d1c",
+        "showSubtechniques": false
+      }
+    ],
+    "mitigation": "Privilege escalation can be mitigated by applying the latest patches, using the principle of least privilege, and monitoring for unusual privilege escalation attempts."
+  },
+  {
+    "name": "Credential Dumping (T1003)",
+    "description": "Credential dumping techniques involve the collection of account credentials from the target machine or network.",
+    "domain": "enterprise-attack",
+    "versions": {
+      "layer": "4.4",
+      "attack": "16",
+      "navigator": "4.8.1"
+    },
+    "techniques": [
+      {
+        "techniqueID": "T1003",
+        "comment": "Tools like Mimikatz are often used to dump account credentials from memory or from the SAM database.",
+        "score": 4,
+        "color": "#c0575d",
+        "showSubtechniques": true
+      },
+      {
+        "techniqueID": "T1003.001",
+        "comment": "Credential dumping from LSASS memory.",
+        "score": 4,
+        "color": "#c0575d",
+        "showSubtechniques": true
+      }
+    ],
+    "mitigation": "Credential dumping can be mitigated by using endpoint detection and response (EDR) tools, applying security patches, and implementing least privilege access controls."
+  },
+  {
+    "name": "Command and Control (C2) (T1071)",
+    "description": "Command and Control (C2) is used by attackers to maintain communication with compromised systems.",
+    "domain": "enterprise-attack",
+    "versions": {
+      "layer": "4.4",
+      "attack": "16",
+      "navigator": "4.8.1"
+    },
+    "techniques": [
+      {
+        "techniqueID": "T1071",
+        "comment": "C2 communications may occur over a variety of protocols, including HTTP, HTTPS, and DNS.",
+        "score": 3,
+        "color": "#9f5f50",
+        "showSubtechniques": true
+      },
+      {
+        "techniqueID": "T1071.001",
+        "comment": "C2 over HTTP or HTTPS, often using standard web traffic to blend in with legitimate communication.",
+        "score": 3,
+        "color": "#9f5f50",
+        "showSubtechniques": false
+      }
+    ],
+    "mitigation": "Command and Control can be mitigated by monitoring network traffic for unusual patterns, blocking suspicious IP addresses, and utilizing DNS filtering."
+  },
+  {
+    "name": "Data Encrypted for Impact (T1486)",
+    "description": "Data encrypted for impact techniques are used by attackers to encrypt files or systems in order to disrupt or impede operations.",
+    "domain": "enterprise-attack",
+    "versions": {
+      "layer": "4.4",
+      "attack": "16",
+      "navigator": "4.8.1"
+    },
+    "techniques": [
+      {
+        "techniqueID": "T1486",
+        "comment": "Ransomware attacks involve encrypting files and demanding ransom for decryption.",
+        "score": 5,
+        "color": "#e53946",
+        "showSubtechniques": true
+      },
+      {
+        "techniqueID": "T1486.001",
+        "comment": "Encrypting sensitive files to hold the organization’s critical data hostage.",
+        "score": 5,
+        "color": "#e53946",
+        "showSubtechniques": false
+      }
+    ],
+    "mitigation": "Data encrypted for impact can be mitigated by implementing strong backup solutions, employing endpoint protection, and ensuring proper security controls to detect ransomware."
+  },
+  {
+    "name": "Exfiltration Over Command and Control Channel (T1041)",
+    "description": "Exfiltration over command and control (C2) channels is when attackers use existing command and control channels to send data back to their infrastructure.",
+    "domain": "enterprise-attack",
+    "versions": {
+      "layer": "4.4",
+      "attack": "16",
+      "navigator": "4.8.1"
+    },
+    "techniques": [
+      {
+        "techniqueID": "T1041",
+        "comment": "Exfiltration of data over encrypted channels used by the attacker’s C2 infrastructure.",
+        "score": 4,
+        "color": "#c1e3a6",
+        "showSubtechniques": true
+      },
+      {
+        "techniqueID": "T1041.001",
+        "comment": "Exfiltrating data over HTTP/HTTPS traffic to avoid detection by network security systems.",
+        "score": 4,
+        "color": "#c1e3a6",
+        "showSubtechniques": false
+      }
+    ],
+    "mitigation": "Exfiltration over C2 can be mitigated by encrypting sensitive data, implementing robust DLP (Data Loss Prevention) tools, and monitoring network traffic for irregularities."
+  },
+  {
+    "name": "Execution Guardrails (T1480)",
+    "description": "Execution guardrails are used by attackers to limit the circumstances under which their malicious payload can execute, often involving system checks.",
+    "domain": "enterprise-attack",
+    "versions": {
+      "layer": "4.4",
+      "attack": "16",
+      "navigator": "4.8.1"
+    },
+    "techniques": [
+      {
+        "techniqueID": "T1480",
+        "comment": "Attackers use system checks to determine whether they are in a suitable environment to execute their payload.",
+        "score": 2,
+        "color": "#b73c3c",
+        "showSubtechniques": true
+      },
+      {
+        "techniqueID": "T1480.001",
+        "comment": "Verifying the presence of virtual machines or sandboxes to avoid detection during analysis.",
+        "score": 2,
+        "color": "#b73c3c",
+        "showSubtechniques": false
+      }
+    ],
+    "mitigation": "Execution guardrails can be mitigated by utilizing anti-malware tools and analyzing system processes to detect suspicious behavior."
+  },
+  {
+    "name": "Impact (T1499)",
+    "description": "Impact techniques are designed to destroy, disrupt, or degrade the integrity or availability of data, systems, or networks.",
+    "domain": "enterprise-attack",
+    "versions": {
+      "layer": "4.4",
+      "attack": "16",
+      "navigator": "4.8.1"
+    },
+    "techniques": [
+      {
+        "techniqueID": "T1499",
+        "comment": "Destructive techniques used to disrupt or destroy data, systems, or networks to achieve mission objectives.",
+        "score": 5,
+        "color": "#d32f2f",
+        "showSubtechniques": false
+      },
+      {
+        "techniqueID": "T1499.001",
+        "comment": "Endpoint Denial of Service (DoS) is used to crash or degrade the performance of a system or endpoint, preventing it from functioning properly.",
+        "score": 4,
+        "color": "#d32f2f",
+        "showSubtechniques": false
+      },
+      {
+        "techniqueID": "T1499.002",
+        "comment": "Network Denial of Service (DoS) involves overwhelming a network with traffic, preventing legitimate users from accessing network resources.",
+        "score": 4,
+        "color": "#d32f2f",
+        "showSubtechniques": false
+      }
+    ],
+    "mitigation": "Impact can be mitigated by employing disaster recovery and business continuity plans, implementing robust data backups, and ensuring system hardening to prevent unauthorized access."
+  }
+]
